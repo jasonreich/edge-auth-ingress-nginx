@@ -46,6 +46,7 @@ metadata:
     name: resource
   annotations:
     nginx.ingress.kubernetes.io/auth-url: "http://auth.default.svc.cluster.local:3000/"
+    nginx.ingress.kubernetes.io/auth-response-headers: "X-Auth-Attributes"
 spec:
   ingressClassName: nginx
   rules:
