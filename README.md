@@ -9,7 +9,7 @@ I have two services;
   - Else, return 401.
 * `resource` – Shows request headers.
 
-I then annotated the ingress for `resource`` with
+I then annotated the ingress for `resource` with
 ```
     nginx.ingress.kubernetes.io/auth-url: "http://auth.default.svc.cluster.local:3000/"
     nginx.ingress.kubernetes.io/auth-response-headers: "X-Auth-Attributes
@@ -30,12 +30,12 @@ I then annotated the ingress for `resource`` with
 ❯ curl -H "Authorization: Bearer jason" localhost/resource
 Resource Server!
 {
+  "authorization": "Bearer shortlivedjwt",
   "host": "localhost",
   "user-agent": "curl/8.4.0",
   "accept": "*/*",
-  "authorization": "Bearer jason",
   "x-auth-attributes": "he's awesome",
-  "x-request-id": "3b9e1b280a9a799aa5da8568dc75b441",
+  "x-request-id": "9f52f6ef33548628400d133bc3bc2a6c",
   "x-real-ip": "192.168.65.1",
   "x-forwarded-for": "192.168.65.1",
   "x-forwarded-host": "localhost",
